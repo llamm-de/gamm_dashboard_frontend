@@ -2,18 +2,33 @@
   <v-card elevation="2" height="100%">
     <v-card-title class="text-h5 font-weight-bold">Deadlines</v-card-title>
     <v-card-subtitle>Days until individual deadlines</v-card-subtitle>
-    <div class="px-10 py-5">
-      <v-sheet
-        color="rgba(56, 142, 60, 0.5)"
-        :rounded="true"
-        elevation="0"
-        height="100"
-      >
-        {{ days_to_conference }} Days {{ hours_to_conference }}:{{
-          minutes_to_conference
-        }}:{{ seconds_to_conference }}</v-sheet
-      >
-    </div>
+    <v-row>
+      <v-col class="col-4">
+        <div class="px-10 pb-5">
+          <v-sheet
+            class="px-5 py-2"
+            color="rgba(56, 142, 60, 0.5)"
+            :rounded="true"
+            elevation="0"
+          >
+            <div class="text-h6 font-weight-bold pb-2">
+              Conference starts in:
+            </div>
+            <div class="text-center">
+              <span class="text-h3">{{ days_to_conference }}</span>
+              <span class="text-caption"> Days </span>
+              <span class="text-h3">{{ hours_to_conference }}</span>
+              <span class="text-caption"> Hours </span>
+              <span class="text-h3">{{ minutes_to_conference }}</span>
+              <span class="text-caption"> Minutes </span>
+              <span class="text-h3">{{ seconds_to_conference }} </span>
+              <span class="text-caption"> Seconds </span>
+            </div>
+          </v-sheet>
+        </div>
+      </v-col>
+      <v-col class="col-8"> </v-col>
+    </v-row>
   </v-card>
 </template>
 
