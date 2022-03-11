@@ -3,31 +3,63 @@
     <v-card-title class="text-h5 font-weight-bold">Deadlines</v-card-title>
     <v-card-subtitle>Days until individual deadlines</v-card-subtitle>
     <v-row>
-      <v-col class="col-4">
-        <div class="px-10 pb-5">
+      <v-col class="col-3">
+        <div class="pl-10 pb-5">
           <v-sheet
             class="px-5 py-2"
-            color="rgba(56, 142, 60, 0.5)"
+            color="rgba(100, 221, 23, 0.75)"
             :rounded="true"
             elevation="0"
           >
             <div class="text-h6 font-weight-bold pb-2">
-              Conference starts in:
+              Conference starts in
             </div>
             <div class="text-center">
-              <span class="text-h3">{{ days_to_conference }}</span>
+              <span class="text-h4">{{ days_to_conference }}</span>
               <span class="text-caption"> Days </span>
-              <span class="text-h3">{{ hours_to_conference }}</span>
+              <span class="text-h4">{{ hours_to_conference }}</span>
               <span class="text-caption"> Hours </span>
-              <span class="text-h3">{{ minutes_to_conference }}</span>
-              <span class="text-caption"> Minutes </span>
-              <span class="text-h3">{{ seconds_to_conference }} </span>
-              <span class="text-caption"> Seconds </span>
+              <span class="text-h4">{{ minutes_to_conference }}</span>
+              <span class="text-caption"> Min. </span>
+              <span class="text-h4">{{ seconds_to_conference }} </span>
+              <span class="text-caption"> Sec. </span>
             </div>
           </v-sheet>
         </div>
       </v-col>
-      <v-col class="col-8"> </v-col>
+      <v-col class="col-3">
+        <div class="pb-5">
+          <v-sheet
+            class="px-5 py-2"
+            color="rgba(185, 246, 202, 0.5)"
+            :rounded="true"
+            elevation="0"
+          >
+          </v-sheet>
+        </div>
+      </v-col>
+      <v-col class="col-3">
+        <div class="pb-5">
+          <v-sheet
+            class="px-5 py-2"
+            color="rgba(185, 246, 202, 0.5)"
+            :rounded="true"
+            elevation="0"
+          >
+          </v-sheet>
+        </div>
+      </v-col>
+      <v-col class="col-3">
+        <div class="pb-5 pr-10">
+          <v-sheet
+            class="px-5 py-2"
+            color="rgba(185, 246, 202, 0.5)"
+            :rounded="true"
+            elevation="0"
+          >
+          </v-sheet>
+        </div>
+      </v-col>
     </v-row>
   </v-card>
 </template>
