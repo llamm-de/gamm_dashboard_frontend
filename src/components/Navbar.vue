@@ -22,7 +22,7 @@
         <span class="font-weight-light">TOOL</span>
         <v-icon>mdi-open-in-new</v-icon>
       </v-btn>
-      <v-switch v-model="$vuetify.theme.dark" label="Dark mode"></v-switch>
+      <!-- <v-switch v-model="$vuetify.theme.dark" label="Dark mode"></v-switch> -->
     </v-app-bar>
   </nav>
 </template>
