@@ -4,40 +4,39 @@
       >Registrations per day</v-card-title
     >
     <v-card-subtitle>Number of participants registered per day</v-card-subtitle>
-    <PerDayChart :chartData="chartdata" :options="chartoptions" />
+    <chart :option="chartOptions"></chart>
   </v-card>
 </template>
 
 <script>
-import PerDayChart from "./PerDay_chart.vue";
 export default {
   name: "RegistrationsPerDayCard",
-  components: {
-    PerDayChart,
-  },
+  components: {},
   props: ["data"],
   data() {
     return {
-      chartdata: {
-        labels: this.data.registrations_per_day.labels,
-        datasets: [
-          {
-            label: "",
-            data: this.data.registrations_per_day.values,
-            fill: true,
-            backgroundColor: "rgba(170, 0, 255, 0.1)",
-            borderColor: "rgba(170, 0, 255, 0.9)",
-            pointBorderWidth: 0,
-            tension: 0,
-          },
-        ],
+      chartOptions: null,
+    };
+  },
+  mounted() {
+    this.chartOptions = {
+      height: null,
+      width: null,
+      xAxis: {
+        data: this.data.labels,
       },
-      chartoptions: {
-        responsive: true,
-        maintainAspectRatio: false,
-        legend: { display: false },
-        tooltips: { enable: false },
+      yAxis: {
+        type: "value",
       },
+      tooltip: {
+        show: true,
+      },
+      series: [
+        {
+          type: "line",
+          data: this.data.values,
+        },
+      ],
     };
   },
 };

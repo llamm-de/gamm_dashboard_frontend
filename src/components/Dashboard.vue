@@ -1,11 +1,19 @@
 <template>
-  <v-container v-if="data"> </v-container>
+  <v-container v-if="data">
+    <v-row>
+      <v-col class="col-3"
+        ><RegistrationsPerDayCard
+          :data="data.registrations.registrations_per_day"
+      /></v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
+import RegistrationsPerDayCard from "./RegistrationsPerDay_card.vue";
 export default {
   name: "Dashboard",
-  components: {},
+  components: { RegistrationsPerDayCard },
 
   data() {
     return {
