@@ -1,7 +1,10 @@
 <template>
   <v-container v-if="data">
     <v-row>
-      <v-col class="col-3"
+      <v-col class="col-8"
+        ><RegistrationsCard :data="data.registrations"
+      /></v-col>
+      <v-col class="col-4"
         ><RegistrationsPerDayCard
           :data="data.registrations.registrations_per_day"
       /></v-col>
@@ -11,9 +14,10 @@
 
 <script>
 import RegistrationsPerDayCard from "./RegistrationsPerDay_card.vue";
+import RegistrationsCard from "./Registrations_card.vue";
 export default {
   name: "Dashboard",
-  components: { RegistrationsPerDayCard },
+  components: { RegistrationsPerDayCard, RegistrationsCard },
 
   data() {
     return {
