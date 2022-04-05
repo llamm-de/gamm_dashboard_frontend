@@ -16,7 +16,11 @@ export default {
   components: {
     Navbar,
   },
-
-  data: () => ({}),
+  async mounted() {
+    // Fetch api data and store using vuex
+    const response = await fetch(process.env.VUE_APP_API_URL);
+    const response_data = await response.json();
+    this.$store.commit("storeDataFromAPI", response_data.Payload);
+  },
 };
 </script>
