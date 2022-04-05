@@ -34,6 +34,8 @@
 
     <!--  Side Drawer -->
     <v-navigation-drawer clipped class="grey lighten-3" v-model="drawer" app>
+      <Countdown />
+      <v-divider></v-divider>
       <v-list nav dense>
         <v-list-item link router to="/">
           <v-list-item-icon>
@@ -60,11 +62,13 @@
 </template>
 
 <script>
+import Countdown from "./Countdown.vue";
 export default {
   name: "Navbar",
+  components: { Countdown },
   data() {
     return {
-      drawer: false,
+      drawer: true,
     };
   },
 };
