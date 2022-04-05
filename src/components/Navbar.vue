@@ -54,7 +54,12 @@
       </v-list>
       <template v-slot:append>
         <div class="pa-2 text-center">
-          <v-btn icon><v-icon large>mdi-github</v-icon></v-btn>
+          <v-btn
+            href="https://github.com/llamm-de/gamm_dashboard_frontend"
+            target="_blank"
+            icon
+            ><v-icon large>mdi-github</v-icon></v-btn
+          >
         </div>
       </template>
     </v-navigation-drawer>

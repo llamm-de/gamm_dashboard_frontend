@@ -4,6 +4,7 @@ import router from './router'
 import vuetify from './plugins/vuetify'
 import store from "./store"
 import "./plugins/echarts";
+import 'leaflet/dist/leaflet.css';
 
 Vue.config.productionTip = false
 
