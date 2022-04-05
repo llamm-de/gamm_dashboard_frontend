@@ -1,10 +1,12 @@
 <template>
-  <v-card elevation="2" height="100%">
+  <v-card elevation="2" height="100%" class="mx-auto mt-6">
     <v-card-title class="text-h5 font-weight-bold"
       >Registrations per day</v-card-title
     >
     <v-card-subtitle>Number of participants registered per day</v-card-subtitle>
+    <!-- <v-card elevation="0" height="80%"> -->
     <chart :option="chartOptions"></chart>
+    <!-- </v-card> -->
   </v-card>
 </template>
 
@@ -20,7 +22,8 @@ export default {
   },
   mounted() {
     this.chartOptions = {
-      height: null,
+      color: ["rgba(87,171,39,1)"],
+      height: "50%",
       width: null,
       xAxis: {
         data: this.data.labels,
@@ -28,13 +31,16 @@ export default {
       yAxis: {
         type: "value",
       },
-      tooltip: {
-        show: true,
-      },
       series: [
         {
           type: "line",
+          symbol: "none",
           data: this.data.values,
+          lineStyle: {
+            normal: {
+              width: 3,
+            },
+          },
         },
       ],
     };

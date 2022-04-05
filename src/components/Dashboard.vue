@@ -1,13 +1,16 @@
 <template>
   <v-container v-if="data">
     <v-row>
-      <v-col class="col-8"
+      <v-col class="col-3"
         ><RegistrationsCard :data="data.registrations"
       /></v-col>
-      <v-col class="col-4"
+      <v-col class="col-9"
         ><RegistrationsPerDayCard
           :data="data.registrations.registrations_per_day"
       /></v-col>
+      <!-- <v-col class="col-3"
+        ><TitlesCard :data="data.participants.participant_titles"
+      /></v-col> -->
     </v-row>
   </v-container>
 </template>
@@ -15,9 +18,10 @@
 <script>
 import RegistrationsPerDayCard from "./RegistrationsPerDay_card.vue";
 import RegistrationsCard from "./Registrations_card.vue";
+// import TitlesCard from "./Titles_card.vue";
 export default {
   name: "Dashboard",
-  components: { RegistrationsPerDayCard, RegistrationsCard },
+  components: { RegistrationsCard, RegistrationsPerDayCard },
 
   data() {
     return {
