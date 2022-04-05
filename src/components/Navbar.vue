@@ -2,10 +2,17 @@
   <nav>
     <v-app-bar clipped-left app dark>
       <v-app-bar-nav-icon dark @click="drawer = !drawer"></v-app-bar-nav-icon>
-      <v-toolbar-title class="font-weight-bold text-h4"
+      <v-toolbar-title
+        class="font-weight-bold text-h4"
+        @click="$router.push('/')"
         >GAMM2022</v-toolbar-title
       >
-      <v-toolbar-title link router to="/" class="font-weight-light text-h4"
+      <v-toolbar-title
+        link
+        router
+        to="/"
+        class="font-weight-light text-h4"
+        @click="$router.push('/')"
         >DASHBOARD</v-toolbar-title
       >
       <v-spacer></v-spacer>
@@ -28,7 +35,7 @@
     <!--  Side Drawer -->
     <v-navigation-drawer clipped class="grey lighten-3" v-model="drawer" app>
       <v-list nav dense>
-        <v-list-item link>
+        <v-list-item link router to="/">
           <v-list-item-icon>
             <v-icon class="large">mdi-view-dashboard</v-icon>
           </v-list-item-icon>
@@ -36,7 +43,7 @@
             Dashboard
           </v-list-item-title>
         </v-list-item>
-        <v-list-item link>
+        <v-list-item link router to="map">
           <v-list-item-icon>
             <v-icon class="large">mdi-map</v-icon>
           </v-list-item-icon>

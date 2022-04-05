@@ -5,7 +5,7 @@
     >
     <v-card-subtitle>Number of participants registered per day</v-card-subtitle>
     <!-- <v-card elevation="0" height="80%"> -->
-    <chart :option="chartOptions"></chart>
+    <!-- <chart :option="chartOptions"></chart> -->
     <!-- </v-card> -->
   </v-card>
 </template>
