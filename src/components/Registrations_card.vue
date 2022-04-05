@@ -5,11 +5,13 @@
 
     <v-card-text>
       <v-row align="end">
-        <v-col class="col-3 pr-0 pb-0 text-h2 black--text font-weight-medium">
-          {{ this.data.registrations_total }}
-        </v-col>
-        <v-col class="col-9 pl-0 pb-0 text-h6 grey--text text-uppercase">
-          total registrations
+        <v-col class="col-12 pb-0">
+          <span class="text-h2 black--text font-weight-medium">
+            {{ this.data.registrations_total }}
+          </span>
+          <span class="text-h6 grey--text text-uppercase">
+            total registrations
+          </span>
         </v-col>
         <v-col class="col-12 pt-0 mt-0">
           <v-progress-linear
