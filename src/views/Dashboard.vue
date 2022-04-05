@@ -1,5 +1,5 @@
 <template>
-  <v-container v-if="data">
+  <v-container>
     <v-row>
       <v-col class="col-3"
         ><RegistrationsCard :data="data.registrations"
@@ -22,11 +22,10 @@ import RegistrationsCard from "../components/Registrations_card.vue";
 export default {
   name: "Dashboard",
   components: { RegistrationsCard, RegistrationsPerDayCard },
-
-  data() {
-    return {
-      data: this.$store.state.data,
-    };
+  computed: {
+    data() {
+      return this.$store.getters.getData;
+    },
   },
 };
 </script>

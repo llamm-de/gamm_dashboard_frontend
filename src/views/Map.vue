@@ -9,19 +9,11 @@ export default {
   components: {
     MapContainer,
   },
-
-  data() {
-    return {
-      data: this.$store.state.data,
-      markers: [
-        {
-          id: 1,
-          longlat: [50.775555, 6.083611],
-          name: "Aachen",
-          participants: 4,
-        },
-      ],
-    };
+  computed: {
+    markers() {
+      const data = this.$store.getters.getData;
+      return data.geodata.locations;
+    },
   },
 };
 </script>

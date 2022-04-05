@@ -8,12 +8,20 @@ export default new Vuex.Store({
         data: null
     },
     mutations: {
-        storeDataFromAPI(state, api_data) {
-            state.data = api_data;
+        setData(state, payload) {
+            state.data = payload;
         }
     },
     actions: {
+        async fetchData(state) {
+            const response = await fetch(process.env.VUE_APP_API_URL);
+            const response_data = await response.json();
+            state.commit("setData", response_data.Payload);
+        }
     },
     modules: {
+    },
+    getters: {
+        getData: state => state.data
     }
 })
