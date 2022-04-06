@@ -16,7 +16,7 @@ export default {
   components: {
     Navbar,
   },
-  mounted() {
+  created() {
     this.$store.dispatch("fetchData");
   },
 };
