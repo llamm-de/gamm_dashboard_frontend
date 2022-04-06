@@ -1,5 +1,5 @@
 <template>
-  <v-card elevation="2" height="100%" class="mx-auto mt-6">
+  <v-card elevation="2" height="100%" class="mx-auto my-auto">
     <v-card-title class="text-h5 font-weight-bold">Registrations</v-card-title>
     <v-card-subtitle>Number of participants registered</v-card-subtitle>
 
@@ -28,7 +28,7 @@
       </v-row>
     </v-card-text>
     <v-divider></v-divider>
-    <v-card-text>
+    <v-card-text class="mb-5">
       <RegistrationProgress
         :total="this.data.gamm_members_total"
         :percent="this.gamm_members_percent"

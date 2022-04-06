@@ -1,17 +1,18 @@
 <template>
-  <v-card elevation="2" height="100%" class="mx-auto mt-6">
+  <v-card elevation="2" height="100%" class="mx-auto my-auto">
     <v-card-title class="text-h5 font-weight-bold"
       >Registrations per day</v-card-title
     >
     <v-card-subtitle>Number of participants registered per day</v-card-subtitle>
     <v-card-text>
       <v-row
-        ><v-col class="col-8">
+        ><v-col class="col-12">
           <v-sheet
-            color="white"
+            color="blue lighten-5"
             max-width="calc(100% - 32px)"
             class="v-sheet--offset mx-auto mt-15"
             rounded
+            elevation="1"
           >
             <v-sparkline
               :value="data.values"
@@ -25,14 +26,6 @@
             ></v-sparkline>
           </v-sheet>
         </v-col>
-        <v-col class="col-4">
-          <v-data-table
-            :headers="headers"
-            :items="table_data"
-            :items-per-page="6"
-            calculate-widths
-          ></v-data-table>
-        </v-col>
       </v-row>
     </v-card-text>
   </v-card>
@@ -43,19 +36,6 @@ export default {
   name: "RegistrationsPerDayCard",
   components: {},
   props: ["data"],
-  data() {
-    return {
-      headers: [
-        { text: "Date", align: "start", sortable: true, value: "date" },
-        {
-          text: "Registrations",
-          align: "start",
-          sortable: true,
-          value: "registrations",
-        },
-      ],
-    };
-  },
   computed: {
     labels() {
       var tmp = [];
@@ -70,18 +50,6 @@ export default {
         } else {
           tmp.push(" ");
         }
-      }
-      return tmp;
-    },
-
-    table_data() {
-      var tmp = [];
-      for (var i = 0; i < this.data.labels.length; i++) {
-        var obj = {
-          date: this.data.labels[i],
-          registrations: this.data.values[i],
-        };
-        tmp.push(obj);
       }
       return tmp;
     },
