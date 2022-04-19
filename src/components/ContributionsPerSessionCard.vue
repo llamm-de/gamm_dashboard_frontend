@@ -3,14 +3,16 @@
     <v-card-title class="text-h5 font-weight-bold"
       >Contributions per session</v-card-title
     >
-    <v-card-subtitle>Number of contributions submitted per day</v-card-subtitle>
+    <v-card-subtitle
+      >Number of contributions submitted per session</v-card-subtitle
+    >
     <v-card-text>
       <v-row>
         <v-col class="col-12">
           <v-data-table
             :headers="headers"
             :items="items"
-            :items-per-page="5"
+            :items-per-page="7"
             class="elevation-1"
           ></v-data-table>
         </v-col>
