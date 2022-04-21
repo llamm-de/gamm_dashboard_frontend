@@ -12,7 +12,7 @@
           <v-data-table
             :headers="headers"
             :items="items"
-            :items-per-page="7"
+            :items-per-page="6"
             class="elevation-1"
           ></v-data-table>
         </v-col>
