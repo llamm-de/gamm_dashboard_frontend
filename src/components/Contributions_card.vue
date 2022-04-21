@@ -28,38 +28,23 @@
       </v-row>
     </v-card-text>
     <v-divider></v-divider>
-    <!-- <v-card-text class="mb-5">
-      <RegistrationProgress
-        :total="this.data.gamm_members_total"
-        :percent="this.gamm_members_percent"
-        text="gamm members"
-      />
-      <RegistrationProgress
-        :total="this.data.dinner_total"
-        :percent="this.dinner_participants_percent"
-        text="dinner participants"
-      />
-      <RegistrationProgress
-        :total="this.data.yamm_lunch_total"
-        :percent="this.yamm_participants_percent"
-        text="yamm lunch participants"
-      />
-      <RegistrationProgress
-        :total="this.data.bus_ticket_total"
-        :percent="this.bus_tickets_percent"
-        text="bus tickets"
-      />
-      <RegistrationProgress
-        :total="this.data.acc_person_total"
-        :percent="this.acc_pers_percent"
-        text="accompanying persons"
-      />
-    </v-card-text> -->
+    <v-card-title class="text-h5 font-weight-bold">Users</v-card-title>
+    <v-card-subtitle>Number of users registered</v-card-subtitle>
+    <v-card-text>
+      <v-row align="end">
+        <v-col class="col-12 pb-0">
+          <span class="text-h2 black--text font-weight-medium">
+            {{ this.data.users.users_total }}
+          </span>
+          <span class="text-h6 grey--text text-uppercase"> total users </span>
+        </v-col>
+      </v-row>
+    </v-card-text>
+    <v-divider></v-divider>
   </v-card>
 </template>
 
 <script>
-// import RegistrationProgress from "./Registration_progress.vue";
 export default {
   name: "ContributionsCard",
   props: ["data"],

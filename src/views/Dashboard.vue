@@ -1,14 +1,14 @@
 <template>
   <v-container :v-if="data" class="mb10">
     <v-row>
-      <v-col class="col-3"
+      <v-col class="col-3 md-12"
         ><RegistrationsCard :data="data.registrations"
       /></v-col>
-      <v-col class="col-6"
+      <v-col class="col-6 md-12"
         ><ContributionsPerSessionCard
           :data="data.contributions.contributions_per_session"
       /></v-col>
-      <v-col class="col-3"><ContributionsCard :data="data" /></v-col>
+      <v-col class="col-3 md-12"><ContributionsCard :data="data" /></v-col>
     </v-row>
   </v-container>
 </template>
