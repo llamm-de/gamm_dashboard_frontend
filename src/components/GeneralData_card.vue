@@ -127,6 +127,7 @@ export default {
   components: { RegistrationProgress },
   data() {
     return {
+      participant_goal: 860,
       users_percent: 0,
       registered_percent: 0,
       contributions_percent: 0,
@@ -139,16 +140,18 @@ export default {
   },
   mounted() {
     // Calculate percentages
-    this.users_percent = Math.floor((this.data.users.users_total / 900) * 100);
+    this.users_percent = Math.floor(
+      (this.data.users.users_total / this.participant_goal) * 100
+    );
     this.registered_percent = Math.floor(
       (this.data.registrations.registrations_total /
         this.data.users.users_total) *
-        100
+        this.users_percent
     );
     this.contributions_percent = Math.floor(
       (this.data.contributions.contributions_total /
         this.data.users.users_total) *
-        100
+        this.users_percent
     );
 
     this.gamm_members_percent = Math.floor(

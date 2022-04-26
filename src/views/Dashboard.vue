@@ -9,12 +9,20 @@
           :data="data.contributions.contributions_per_session"
       /></v-col>
     </v-row>
+    <!-- <v-row>
+      <v-col class="col-12">
+        <RegistrationsPerDayCard
+          :data="data.registrations.registrations_per_day"
+        />
+      </v-col>
+    </v-row> -->
   </v-container>
 </template>
 
 <script>
 import ContributionsPerSessionCard from "../components/ContributionsPerSessionCard.vue";
 import GeneralDataCard from "../components/GeneralData_card.vue";
+// import RegistrationsPerDayCard from "../components/RegistrationsPerDay_card.vue";
 export default {
   name: "Dashboard",
   components: {
